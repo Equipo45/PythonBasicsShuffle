@@ -1,0 +1,26 @@
+#Mutable el valor puede cambiar una vez establecido
+
+#-1-
+lista=[1,1.2,'1',True,[1,2]]
+lista=[1,2,3,4,5,6,7,8]#mutable
+#0,1,2,3,4,5,6,7
+tupla=(1,2,3,4,5,6,7,8)#inmutable
+sets={1,2,3,4,5,6,7,8,8,7}#sin repeticion
+diccionario={'a':1,'b':2,'c':3,'d':4,'e':5}#mutable
+set1={}#error no es un set , python lo detecta como diccionario
+set2=set()#si es un set
+print(type(set1),type(set2))
+
+
+
+#diccionario.update('a':2,'h':3)
+
+
+
+#print(tupla)
+#print(sets)
+#print(diccionario)
+
+#print(diccionario[0])
+#print(diccionario.get(0))
+#print(diccionario['a'])
