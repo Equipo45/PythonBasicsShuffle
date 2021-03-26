@@ -1,0 +1,29 @@
+
+def suma_0(n):
+	if n == 0:
+		resultado=0
+	else:
+		resultado=n+suma_0(n-1)
+
+	return resultado
+#4 o 0?
+print(suma_0(4))
+
+def suma_harmonica(n):
+#1+1/2+1/3+1/4+1/5
+	if n==1:
+		resultado=1
+	else:
+		resultado=(1/n)+suma_harmonica(n-1)
+	return resultado
+print(suma_harmonica(5))
+
+def alreves(palabra,n):
+	if 0==n:
+		resultado=palabra[n]
+	else:		
+		resultado=palabra[n]+alreves(palabra,n-1)
+#la suma es n+ recrusividad no al reves se suman a la izquierda no a la derecha
+	return resultado
+palabra='perro'
+print(alreves(palabra,len(palabra)-1))
