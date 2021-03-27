@@ -1,0 +1,42 @@
+#Generador de contraseñas
+#Mayusculas
+#Minisculas
+#Numeros
+#3 simbolos raros distintos
+import random
+
+
+
+
+def mayuscula():
+	lista=['A','B','C','D','R','T','P','O','H','F','M','N','Z','X','Ñ','L','K','J']
+	posicion=random.randint(0,len(lista)-1)
+	letra=lista[posicion]
+	return letra
+def minisculas():
+	letra=mayuscula()
+	letra=letra.lower()
+	return letra
+
+def numero():
+	numero=random.randint(0,10000)
+	return numero
+def simbolos():
+	lista=['?','=','*','/','#','@','$','€','ª','&','º']
+	posicion=random.randint(0,len(lista)-1)
+	#Return a random integer N such that a <= N <= b. Alias for randrange(a, b+1)
+	#Por eso ponemos -1
+	letra=lista[posicion]
+	return letra
+def generador_contraseñas(numeros):
+	contraseña=''
+	for i in range(numeros):
+		lista=[mayuscula(),minisculas(),numero(),simbolos()]
+		posicion=random.randrange(0,len(lista))
+		contraseña+=str(lista[posicion])
+
+	return contraseña
+
+
+
+print(generador_contraseñas(50))
