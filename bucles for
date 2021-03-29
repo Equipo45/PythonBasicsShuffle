@@ -1,0 +1,16 @@
+palabras=['hola','que','tal']
+numeros=[1,2,3,4,5,6,7]
+diccionario={'x':1,'c':2,'u':3,'p':7}
+
+def valor_mas_alto(diccionario):
+	valor_alto=0
+	llave_alta=0
+	repetido=False
+	for keys,values in diccionario.items():
+		if values>valor_alto:
+			llave_alta=keys
+	return llave_alta
+
+print(valor_mas_alto(diccionario))
+
+
