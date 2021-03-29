@@ -1,0 +1,45 @@
+from requests_html import HTMLSession
+from bs4 import BeautifulSoup
+
+
+
+a_buscar='jamon'
+url_base='https://www.amazon.es/s?k='+a_buscar+'&__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&ref=nb_sb_noss'
+
+s=HTMLSession()
+
+def get_data(url):
+	r=s.get(url)
+	r.html.render(sleep=1)
+	soup=BeautifulSoup(r.html.html,'html.parser')
+
+	return soup
+
+def next_page(soup):
+	page=soup.find('ul',{'class':'a-pagination'})
+	if not page.find('li',{'class':'a-disabled a-last'}):
+		url='https://www.amazon.es/s?k='+str(page.find('li',{'class':'a-last'}).find('a')['href'])
+
+	else:
+		url=None
+
+	return url
+
+def pagination(url):
+	lista_paginas=[]
+	hay_siguiente=True
+	while hay_siguiente:
+		try:
+			soup=get_data(url)
+			url_siguiente=next_page(soup)
+			url=url_siguiente
+			if url!= None:
+				lista_paginas.append(url)
+
+		except:
+			hay_siguiente=False
+			print('Final del programa')
+
+	return lista_paginas
+
+print(pagination(url_base))
