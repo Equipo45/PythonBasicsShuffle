@@ -1,4 +1,4 @@
-#Recordamos qeu los valores de los generadores no se alamcenan en la memoria
+#Recordamos que los valores de los generadores no se almacenan en la memoria
 #Una vez utilizados se desechan
 #Calculan un numero y van al siguiente
 
