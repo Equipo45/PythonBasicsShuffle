@@ -23,3 +23,15 @@ lista=[2,3]
 
 funcion_suma(*lista)
 print(*lista)
+
+#otra manera de hacerlo
+def funcion_suma(*numeros):
+	resultado=0
+	for numero in numeros:
+		resultado+=numero
+	print(resultado)
+
+lista=[2,3]
+
+funcion_suma(*lista)
+
